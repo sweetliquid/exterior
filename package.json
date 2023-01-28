@@ -29,16 +29,17 @@
     "@blitzjs/rpc": "2.0.0-beta.22",
     "@prisma/client": "4.6.0",
     "blitz": "2.0.0-beta.22",
+    "final-form": "4.20.9",
     "next": "13.1",
     "prisma": "4.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "zod": "3.20.2",
-    "final-form": "4.20.9",
-    "react-final-form": "6.5.9"
+    "react-final-form": "6.5.9",
+    "zod": "3.20.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "12.0.8",
+    "@next/env": "13.1.6",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
