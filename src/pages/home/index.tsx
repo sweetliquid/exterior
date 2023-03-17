@@ -1,54 +1,49 @@
 import { BlitzPage } from '@blitzjs/next'
 import Layout from '../../core/layouts/Layout'
-import Wip from '../../core/components/Wip'
+import { PropsWithChildren } from 'react'
+import { LargeWip } from '../../core/components/Wip'
 import styled from 'styled-components'
-import { PropsWithChildren, ReactNode } from 'react'
 
-const StyledWip = styled(Wip)`
-  border-width: 30px;
-  font-size: 120px;
+const FlyleafRoot = styled.div`
+  height: 50%;
+  position: sticky;
+  top: 0;
+  background: gray;
 `
 
 function Flyleaf() {
   return (
-    <div
-      css={`
-        height: 50%;
-        position: sticky;
-        top: 0;
-        background: gray;
-      `}
-    >
-      <StyledWip>Flyleaf</StyledWip>
-    </div>
+    <FlyleafRoot>
+      <LargeWip>Flyleaf</LargeWip>
+    </FlyleafRoot>
   )
 }
 
+const ContentRoot = styled.div`
+  height: 50%;
+  background: gray;
+  position: relative;
+`
+
 function Content(props: PropsWithChildren) {
   return (
-    <div
-      css={`
-        height: 50%;
-        background: gray;
-        position: relative;
-      `}
-    >
-      <StyledWip>{props.children}</StyledWip>
-    </div>
+    <ContentRoot>
+      <LargeWip>{props.children}</LargeWip>
+    </ContentRoot>
   )
 }
+
+const PageRoot = styled.div`
+  height: 200vh;
+`
 
 const Home: BlitzPage = () => {
   return (
     <Layout title="Home">
-      <div
-        css={`
-          height: 200vh;
-        `}
-      >
+      <PageRoot>
         <Flyleaf />
         <Content>Content</Content>
-      </div>
+      </PageRoot>
     </Layout>
   )
 }
